@@ -2,8 +2,9 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@cl
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { Star, StarsIcon } from "lucide-react";
 import { Button } from './ui/button'
-import { LayoutDashboard } from 'lucide-react'
+import { ChevronDown, LayoutDashboard } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu'
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
             </Link>
         
 
-        <div>
+        <div className='flex items-center space-x-2 md:space-x-4'>
             <SignedIn>
                 <Link href={"/dashboard"}>
                     <Button>
@@ -27,10 +28,15 @@ const Header = () => {
                 </Link>
             </SignedIn>
             <DropdownMenu>
-                <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+                <DropdownMenuTrigger>
+                <Button>
+                        <StarsIcon className=" h-4 w-4" />
+                        <span className='hidden md:block'>Growth Tools</span>   
+                        <ChevronDown className="h-4 w-4" />
+                        
+                    </Button>
+                </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
                     <DropdownMenuItem>Profile</DropdownMenuItem>
                     <DropdownMenuItem>Billing</DropdownMenuItem>
                     <DropdownMenuItem>Team</DropdownMenuItem>
