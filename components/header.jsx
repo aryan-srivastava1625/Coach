@@ -2,7 +2,7 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@cl
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { Star, StarsIcon } from "lucide-react";
+import { FileText, GraduationCap, PenBox, Star, StarsIcon } from "lucide-react";
 import { Button } from './ui/button'
 import { ChevronDown, LayoutDashboard } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu'
@@ -37,10 +37,23 @@ const Header = () => {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Billing</DropdownMenuItem>
-                    <DropdownMenuItem>Team</DropdownMenuItem>
-                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Link href={"/resume-builder"} className='flex items-center gap-2'>
+                            <FileText className=" h-4 w-4" />
+                            <span>Resume Builder</span>
+                        </Link>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem><Link href={"/cover-letter-builder"} className='flex items-center gap-2'>
+                            <PenBox className=" h-4 w-4" />
+                            Cover Letter Generator
+                        </Link></DropdownMenuItem>
+
+                    <DropdownMenuItem><Link href={"/interview"} className='flex items-center gap-2'>
+                            <GraduationCap className=" h-4 w-4" />
+                            Interview Preparation
+                        </Link></DropdownMenuItem>
+
                 </DropdownMenuContent>
                 </DropdownMenu>
         </div>
